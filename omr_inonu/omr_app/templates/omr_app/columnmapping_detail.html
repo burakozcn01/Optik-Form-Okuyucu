@@ -1,0 +1,17 @@
+{% extends "omr_app/base.html" %}
+{% block title %}ColumnMapping Detayı{% endblock %}
+
+{% block content %}
+<h1>ColumnMapping Detayı</h1>
+<hr>
+<div class="card">
+  <div class="card-header">
+    ID: {{ mapping.id }}
+  </div>
+  <div class="card-body">
+    <p><strong>Test Group:</strong> {{ mapping.test_group.name }}</p>
+    <p><strong>Course:</strong> {{ mapping.course.name }}</p>
+    <p><strong>Column Number:</strong> {{ mapping.column_number }}</p>
+  </div>
+</div>
+{% endblock %}

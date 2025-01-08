@@ -1,0 +1,15 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Kurs Sil{% endblock %}
+
+{% block content %}
+<h1>Kurs Sil</h1>
+<hr>
+<div class="alert alert-danger" role="alert">
+  <p><strong>{{ course.name }}</strong> (ID: {{ course.id }}) kursunu silmek istediğinize emin misiniz?</p>
+</div>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Sil</button>
+  <a href="{% url 'course-list-html' %}" class="btn btn-secondary">İptal</a>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Kurs Detayı{% endblock %}
+
+{% block content %}
+<h1>Kurs Detayı</h1>
+<hr>
+<div class="card">
+  <div class="card-header">
+    {{ course.name }} ({{ course.code }})
+  </div>
+  <div class="card-body">
+    <p><strong>Açıklama:</strong> {{ course.description }}</p>
+    <p><strong>Toplam Soru:</strong> {{ course.total_questions }}</p>
+    <p><strong>ID:</strong> {{ course.id }}</p>
+  </div>
+</div>
+{% endblock %}

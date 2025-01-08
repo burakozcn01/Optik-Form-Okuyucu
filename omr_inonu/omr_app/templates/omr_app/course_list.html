@@ -1,0 +1,38 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Kurslar{% endblock %}
+
+{% block content %}
+<h1>Kurs Listesi</h1>
+<hr>
+<div class="mb-2">
+  <a class="btn btn-success" href="{% url 'course-create-html' %}">Yeni Kurs Ekle</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Kurs Adı</th>
+      <th>Kurs Kodu</th>
+      <th>Toplam Soru</th>
+      <th>Detay</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for course in courses %}
+    <tr>
+      <td>{{ course.id }}</td>
+      <td>{{ course.name }}</td>
+      <td>{{ course.code }}</td>
+      <td>{{ course.total_questions }}</td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="{% url 'course-detail-html' pk=course.id %}">Detay</a>
+      </td>
+      <td>
+        <a class="btn btn-danger btn-sm" href="{% url 'course-delete-html' pk=course.id %}">Sil</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

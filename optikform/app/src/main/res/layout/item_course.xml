@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewCourseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kurs Adı"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textViewCourseCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kurs Kodu"
+            android:textSize="14sp"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:id="@+id/textViewTestGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Grubu"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/textViewColumnNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sütun Numarası"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/textViewCourseDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kurs Açıklaması"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="4dp"/>
+
+        <ImageButton
+            android:id="@+id/buttonDeleteCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="Kursu Sil"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="end"
+            android:tint="@color/red"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

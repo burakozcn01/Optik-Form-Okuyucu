@@ -1,0 +1,16 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Test Group Detayı{% endblock %}
+
+{% block content %}
+<h1>Test Group Detayı</h1>
+<hr>
+<div class="card">
+  <div class="card-header">
+    {{ testgroup.name }}
+  </div>
+  <div class="card-body">
+    <p><strong>Toplam Soru:</strong> {{ testgroup.total_questions }}</p>
+    <p><strong>ID:</strong> {{ testgroup.id }}</p>
+  </div>
+</div>
+{% endblock %}

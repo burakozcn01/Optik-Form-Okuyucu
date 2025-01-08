@@ -1,0 +1,13 @@
+{% extends "omr_app/base.html" %}
+{% block title %}TestGroup Oluştur{% endblock %}
+
+{% block content %}
+<h1>Yeni TestGroup Oluştur</h1>
+<hr>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Oluştur</button>
+  <a href="{% url 'testgroup-list-html' %}" class="btn btn-secondary">Vazgeç</a>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Kurs Oluştur{% endblock %}
+
+{% block content %}
+<h1>Yeni Kurs Oluştur</h1>
+<hr>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Oluştur</button>
+  <a href="{% url 'course-list-html' %}" class="btn btn-secondary">Vazgeç</a>
+</form>
+{% endblock %}

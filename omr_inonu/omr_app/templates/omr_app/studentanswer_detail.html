@@ -1,0 +1,29 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Öğrenci Cevabı Detayı{% endblock %}
+
+{% block content %}
+<h1>Öğrenci Cevabı Detayı</h1>
+<hr>
+<div class="card">
+  <div class="card-header">
+    ID: {{ answer.id }}
+  </div>
+  <div class="card-body">
+    <p><strong>Öğrenci:</strong> {{ answer.student.student_number }}</p>
+    <p><strong>Test Group:</strong> {{ answer.test_group.name }}</p>
+    <p><strong>Course:</strong> {{ answer.course.name }}</p>
+    <p><strong>Soru ID:</strong> {{ answer.question_id }}</p>
+    <p><strong>Seçili Cevap:</strong> {{ answer.selected_answer }}</p>
+    <p>
+      <strong>Doğru Mu?:</strong>
+      {% if answer.is_correct %}
+        <span class="badge bg-success">Evet</span>
+      {% else %}
+        <span class="badge bg-danger">Hayır</span>
+      {% endif %}
+    </p>
+    <p><strong>Oluşturma Tarihi:</strong> {{ answer.created_at }}</p>
+    <p><strong>Güncelleme Tarihi:</strong> {{ answer.updated_at }}</p>
+  </div>
+</div>
+{% endblock %}

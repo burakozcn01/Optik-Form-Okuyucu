@@ -1,0 +1,46 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <h1>OMR Uygulaması Ana Sayfa</h1>
+    <p>Bu sayfada mevcut istatistikleri veya kısa özetleri görebilirsiniz.</p>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card mb-3 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Kurs Sayısı</h5>
+            <p class="display-6">{{ course_count }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card mb-3 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Öğrenci Sayısı</h5>
+            <p class="display-6">{{ student_count }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card mb-3 text-center">
+          <div class="card-body">
+            <h5 class="card-title">Test Grup Sayısı</h5>
+            <p class="display-6">{{ testgroup_count }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card mb-3 text-center">
+          <div class="card-body">
+            <h5 class="card-title">AnswerKey Sayısı</h5>
+            <p class="display-6">{{ answerkey_count }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

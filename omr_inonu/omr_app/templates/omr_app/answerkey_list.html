@@ -1,0 +1,40 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Answer Keys{% endblock %}
+
+{% block content %}
+<h1>Answer Key Listesi</h1>
+<hr>
+<div class="mb-2">
+  <a class="btn btn-success" href="{% url 'answerkey-create-html' %}">Yeni AnswerKey Ekle</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Test Group</th>
+      <th>Course</th>
+      <th>Soru ID</th>
+      <th>Doğru Cevap</th>
+      <th>Detay</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ak in answerkeys %}
+    <tr>
+      <td>{{ ak.id }}</td>
+      <td>{{ ak.test_group.name }}</td>
+      <td>{{ ak.course.name }}</td>
+      <td>{{ ak.question_id }}</td>
+      <td>{{ ak.correct_answer }}</td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="{% url 'answerkey-detail-html' pk=ak.id %}">Detay</a>
+      </td>
+      <td>
+        <a class="btn btn-danger btn-sm" href="{% url 'answerkey-delete-html' pk=ak.id %}">Sil</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

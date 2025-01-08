@@ -1,0 +1,38 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Column Mappings{% endblock %}
+
+{% block content %}
+<h1>Column Mapping Listesi</h1>
+<hr>
+<div class="mb-2">
+  <a class="btn btn-success" href="{% url 'columnmapping-create-html' %}">Yeni ColumnMapping Ekle</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Test Group</th>
+      <th>Course</th>
+      <th>Column Number</th>
+      <th>Detay</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for cm in mappings %}
+    <tr>
+      <td>{{ cm.id }}</td>
+      <td>{{ cm.test_group.name }}</td>
+      <td>{{ cm.course.name }}</td>
+      <td>{{ cm.column_number }}</td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="{% url 'columnmapping-detail-html' pk=cm.id %}">Detay</a>
+      </td>
+      <td>
+        <a class="btn btn-danger btn-sm" href="{% url 'columnmapping-delete-html' pk=cm.id %}">Sil</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

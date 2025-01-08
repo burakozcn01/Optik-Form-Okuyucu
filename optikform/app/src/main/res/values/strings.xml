@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Optik Form</string>
+    <string name="answers_label">Cevaplar:</string>
+    <string name="student_number">Öğrenci Numarası: %1$s</string>
+    <string name="test_group">Test Grubu: %1$s</string>
+    <string name="error_message">Hata: %1$s</string>
+    <string name="no_data">Veri Bulunamadı</string>
+    <string name="select_test_group">Test Grubunu Seçin</string>
+</resources>

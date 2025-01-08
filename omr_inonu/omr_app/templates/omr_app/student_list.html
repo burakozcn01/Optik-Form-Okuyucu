@@ -1,0 +1,34 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Öğrenciler{% endblock %}
+
+{% block content %}
+<h1>Öğrenci Listesi</h1>
+<hr>
+<div class="mb-2">
+  <a class="btn btn-success" href="{% url 'student-create-html' %}">Yeni Öğrenci Ekle</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Öğrenci No</th>
+      <th>Detay</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <td>{{ student.id }}</td>
+      <td>{{ student.student_number }}</td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="{% url 'student-detail-html' pk=student.id %}">Detay</a>
+      </td>
+      <td>
+        <a class="btn btn-danger btn-sm" href="{% url 'student-delete-html' pk=student.id %}">Sil</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "omr_app/base.html" %}
+{% block title %}TestGroup Sil{% endblock %}
+
+{% block content %}
+<h1>TestGroup Sil</h1>
+<hr>
+<div class="alert alert-danger">
+  <p><strong>{{ testgroup.name }}</strong> (ID: {{ testgroup.id }}) kaydını silmek istediğinize emin misiniz?</p>
+</div>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Sil</button>
+  <a href="{% url 'testgroup-list-html' %}" class="btn btn-secondary">İptal</a>
+</form>
+{% endblock %}

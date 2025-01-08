@@ -1,0 +1,50 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Öğrenci Cevapları{% endblock %}
+
+{% block content %}
+<h1>Öğrenci Cevap Listesi</h1>
+<hr>
+<div class="mb-2">
+  <a class="btn btn-success" href="{% url 'studentanswer-create-html' %}">Yeni Cevap Ekle</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Öğrenci</th>
+      <th>Test Group</th>
+      <th>Course</th>
+      <th>Soru ID</th>
+      <th>Seçili Cevap</th>
+      <th>Doğru mu?</th>
+      <th>Detay</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ans in answers %}
+    <tr>
+      <td>{{ ans.id }}</td>
+      <td>{{ ans.student.student_number }}</td>
+      <td>{{ ans.test_group.name }}</td>
+      <td>{{ ans.course.name }}</td>
+      <td>{{ ans.question_id }}</td>
+      <td>{{ ans.selected_answer }}</td>
+      <td>
+        {% if ans.is_correct %}
+          <span class="badge bg-success">Evet</span>
+        {% else %}
+          <span class="badge bg-danger">Hayır</span>
+        {% endif %}
+      </td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="{% url 'studentanswer-detail-html' pk=ans.id %}">Detay</a>
+      </td>
+      <td>
+        <a class="btn btn-danger btn-sm" href="{% url 'studentanswer-delete-html' pk=ans.id %}">Sil</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

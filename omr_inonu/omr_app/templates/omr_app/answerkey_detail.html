@@ -1,0 +1,18 @@
+{% extends "omr_app/base.html" %}
+{% block title %}AnswerKey Detayı{% endblock %}
+
+{% block content %}
+<h1>AnswerKey Detayı</h1>
+<hr>
+<div class="card">
+  <div class="card-header">
+    ID: {{ answerkey.id }}
+  </div>
+  <div class="card-body">
+    <p><strong>Test Group:</strong> {{ answerkey.test_group.name }}</p>
+    <p><strong>Course:</strong> {{ answerkey.course.name }}</p>
+    <p><strong>Soru ID:</strong> {{ answerkey.question_id }}</p>
+    <p><strong>Doğru Cevap:</strong> {{ answerkey.correct_answer }}</p>
+  </div>
+</div>
+{% endblock %}

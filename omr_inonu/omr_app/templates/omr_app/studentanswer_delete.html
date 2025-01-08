@@ -1,0 +1,15 @@
+{% extends "omr_app/base.html" %}
+{% block title %}StudentAnswer Sil{% endblock %}
+
+{% block content %}
+<h1>StudentAnswer Sil</h1>
+<hr>
+<div class="alert alert-danger">
+  <p>ID: <strong>{{ answer.id }}</strong> kaydını silmek istediğinize emin misiniz?</p>
+</div>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Sil</button>
+  <a href="{% url 'studentanswer-list-html' %}" class="btn btn-secondary">İptal</a>
+</form>
+{% endblock %}

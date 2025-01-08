@@ -1,0 +1,36 @@
+{% extends "omr_app/base.html" %}
+{% block title %}Test Grupları{% endblock %}
+
+{% block content %}
+<h1>Test Grup Listesi</h1>
+<hr>
+<div class="mb-2">
+  <a class="btn btn-success" href="{% url 'testgroup-create-html' %}">Yeni TestGroup Ekle</a>
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Adı</th>
+      <th>Toplam Soru</th>
+      <th>Detay</th>
+      <th>Sil</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tg in testgroups %}
+    <tr>
+      <td>{{ tg.id }}</td>
+      <td>{{ tg.name }}</td>
+      <td>{{ tg.total_questions }}</td>
+      <td>
+        <a class="btn btn-primary btn-sm" href="{% url 'testgroup-detail-html' pk=tg.id %}">Detay</a>
+      </td>
+      <td>
+        <a class="btn btn-danger btn-sm" href="{% url 'testgroup-delete-html' pk=tg.id %}">Sil</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

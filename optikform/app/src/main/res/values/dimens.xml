@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="padding_standard">16dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="text_size_large">28sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="chip_spacing">8dp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+</resources>
