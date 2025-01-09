@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
  */
 object ApiClient {
     // API'nin temel URL'si
-    private const val BASE_URL = "http://3.74.41.200/api/"
+    private const val BASE_URL = "http://3.121.216.166/api/"
 
     // HTTP istek ve yanıtlarını loglamak için kullanılan interceptor
     private val logging = HttpLoggingInterceptor().apply {
